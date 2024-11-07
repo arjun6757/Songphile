@@ -10,6 +10,7 @@ toggleBtn.addEventListener('click', () => {
     const menu = document.querySelector(".menu");
     const header = document.querySelector(".header");
     const radios = document.querySelectorAll(".radio");
+    const closeBtnSVG = document.getElementById("close-btn-svg");
 
     // Check the current background color and toggle between two states
     if (menu.style.backgroundColor === "rgb(255, 249, 238)") {
@@ -19,6 +20,7 @@ toggleBtn.addEventListener('click', () => {
         header.style.backgroundColor = "";
         radios.forEach(radio => radio.style.color = "");  // Reset each .radio element's color
         toggleBtn.innerText = "🌙";  // Dark mode icon
+        closeBtnSVG.style.fill = "";
     } else {
         // Set to light mode colors
         menu.style.backgroundColor = "rgb(255, 249, 238)";
@@ -26,6 +28,7 @@ toggleBtn.addEventListener('click', () => {
         header.style.backgroundColor = "rgb(246, 229, 215)";
         radios.forEach(radio => radio.style.color = "black");  // Apply color to each .radio element
         toggleBtn.innerText = "☀️";  // Light mode icon
+        closeBtnSVG.style.fill = "black";
     }
 });
 
@@ -86,6 +89,7 @@ function renderEmotionsRadios(songs) {
                 <img src="${imageUrl}" alt="${emotion} image" />
             </section>
             <label for="${emotion}">${emotion}</label>
+            <div class="radio-items" >
             <input
             type="radio"
             id="${emotion}"
@@ -93,6 +97,7 @@ function renderEmotionsRadios(songs) {
             name="emotions"
             >
             <button class="play-song-btn" onclick="playSong('${emotion}')">▶</button>
+            </div>
         </div>`;
     }
 
