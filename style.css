@@ -207,6 +207,17 @@ input[type="radio"] {
     fill: #bd301d;
 }
 
+@media screen and (min-width: 1367px) {
+    .controls-container .emotion-radios {
+        gap: 45px;
+    }
+
+    .emotion-radios .radio {
+        width: 26rem;
+        height: 28rem;
+    }
+}
+
 @media screen and (max-width: 1360px) {
     .controls-container .emotion-radios {
         grid-template-columns: repeat(3, 1fr);
