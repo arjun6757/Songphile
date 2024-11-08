@@ -302,6 +302,10 @@ input[type="radio"] {
     bottom: 15vh;
   }
 
+  .song-modal-close-btn {
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
+  }
+
   .emotion-radios .radio {
     border-radius: 25px;
   }
