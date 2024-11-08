@@ -175,6 +175,7 @@ input[type="radio"] {
 .play-song-btn {
     background-color: #0d6efd;
     padding: 8px;
+    padding-left: 0.6875rem; /* <=11px */
     width: 3rem;
     height: 3rem;
     color: #f5e8e6;
