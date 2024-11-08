@@ -50,7 +50,7 @@ window.playSong = function (emotion) {
     const songObject = songsArray.length === 1 ? songsArray[0] : songsArray[Math.floor(Math.random() * songsArray.length)];
 
     songModalInner.innerHTML = `
-        <iframe draggable="true" class="mood-song" src="${songObject.url}" allow="autoplay; encrypted-media" width="100%" height="100%" loading="lazy" frameborder="0" ></iframe>
+        <iframe draggable="true" class="mood-song" src="${songObject.url}" allow="autoplay; encrypted-media" width="100%" height="100%" loading="lazy" ></iframe>
     `;
     songModal.style.display = 'flex';
 };

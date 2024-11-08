@@ -1,345 +1,300 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
 }
 
-
 body {
-    /* width: 100vw; */
-    overflow-x: hidden; /* Ensure no horizontal scrolling */
+  /* width: 100vw; */
+  overflow-x: hidden; /* Ensure no horizontal scrolling */
 }
 
 header {
-    /* border: 1px solid #fff; */
-    width: 100vw;
-    background-color: #171717;
-    height: 6rem;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-    /* border: 1px solid #fff; */
+  /* border: 1px solid #fff; */
+  width: 100vw;
+  background-color: #171717;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  /* border: 1px solid #fff; */
 }
 
 #logo {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 header .left-side {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
 }
 
 .left-side .logo-text {
-    color: #fff;
-    font-size: 1.3rem;
-    font-family: "Noto Sans", sans-serif;
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .right-side {
-    /* border: 1px solid #fff; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 10rem;
+  /* border: 1px solid #fff; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 10rem;
 }
 
 #toggle {
-    background-color: #333;
-    width: 50px;
-    height: 50px;
-    padding: 12px;
-    /* border: 1px solid #777; */
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.5rem;
+  background-color: #333;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  /* border: 1px solid #777; */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
 }
 
 #toggle:hover {
-    background-color: #242424;
+  background-color: #242424;
 }
-
-/* #toggle svg:hover, #toggle svg:focus {
-    fill: #fff;
-} */
-
-/* #moon {
-    color: #fff;
-    display: none;
-    fill:none;
-}
-
-#sun {
-    color: #fff;
-    fill:none;
-}
-
-#sun:hover {
-    fill: white;
-}
-
-#moon:hover {
-    fill: white;
-} */
 
 .menu {
-    min-height: calc(100vh - 6rem);
-    /* background-color: whitesmoke; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  min-height: calc(100vh - 6rem);
+  /* background-color: whitesmoke; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .controls-container {
-    border-radius: 1px solid #fff;
+  border-radius: 1px solid #fff;
 }
 
 .controls-container .emotion-radios {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scrollbar-width: none; /* Firefox */
-    border-radius: 10px solid #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  border-radius: 10px solid #fff;
 }
 
 .controls-container .emotion-radios::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
 
 .emotion-radios .radio {
-    display: flex;
-    flex-direction: column;
-    width: 19rem;
-    height: 21rem;
-    border-radius: 10rem;
-    text-align: center;
-    text-transform: capitalize;
-    font-size: 1.5rem;
-    color: #fff;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 19rem;
+  height: 21rem;
+  border-radius: 10rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: #fff;
+  position: relative;
 }
 
-.album-img{
-    height: 100%;
+.album-img {
+  border-radius: 25px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .radio .album-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.radio .radio-items, label {
-    position: absolute;
+.radio .radio-items,
+label {
+  position: absolute;
 }
 
 .radio label {
-    color: #fff;
-    left: 0; right: 0;
-    bottom: 6rem;
-    letter-spacing: 1rem;
-    font-weight: 800;
-    font-size: 1.7rem;
-    font-family: "Comic Neue", cursive;
-    font-style: italic;
-    filter: drop-shadow(2px -2px #000);
+  color: #fff;
+  left: 0;
+  right: 0;
+  bottom: 6rem;
+  letter-spacing: 1rem;
+  font-weight: 800;
+  font-size: 1.7rem;
+  font-family: "Comic Neue", cursive;
+  font-style: italic;
+  filter: drop-shadow(2px -2px #000);
 }
 
 .radio .radio-items {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2rem;
 }
 
 input[type="radio"] {
-    cursor: pointer;
-    display: none;
+  cursor: pointer;
+  display: none;
 }
 
 .play-song-btn {
-    background-color: #0d6efd;
-    padding: 8px;
-    padding-left: 0.6875rem; /* <=11px */
-    width: 3rem;
-    height: 3rem;
-    color: #f5e8e6;
-    font-size: 24px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    text-align: center;
+  background-color: #0d6efd;
+  padding: 8px;
+  padding-left: 0.6875rem; /* <=11px */
+  width: 3rem;
+  height: 3rem;
+  color: #f5e8e6;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
 }
 
-.play-song-btn:hover,.play-song-btn:focus{
-    /* box-shadow: 0px 0px 18px #fd631c; */
-    box-shadow: 0px 0px 18px #0d6efd;
+.play-song-btn:hover,
+.play-song-btn:focus {
+  /* box-shadow: 0px 0px 18px #fd631c; */
+  box-shadow: 0px 0px 18px #0d6efd;
 }
 
 /* modal */
 .song-modal {
-    display: none; /* flex when displayed */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 28vh;
-    border: none;
+  display: none; /* flex when displayed */
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  border: none;
 }
 
 .mood-song {
-    width: 50vw;
-    max-height: 500px;
-    border: none;
+  width: 100vw;
+  border: none;
 }
 
 .song-modal-close-btn {
-    position: absolute;
-    top: 7rem;
-    /* font-size: 1.3rem; */
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    margin: auto;
+  position: fixed;
+  bottom: 10vh;
+  right: 1vw;
+  /* font-size: 1.3rem; */
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  margin: auto;
 }
 
 .song-modal-close-btn svg {
-    object-fit: cover;
-    object-position: center;
-    width: 30px;
-    height: 30px;
-    fill: #fff;
-    cursor: pointer;
-}
-
-.song-modal-close-btn svg:hover {
-    fill: #bd301d;
+  object-fit: cover;
+  object-position: center;
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  cursor: pointer;
+  fill: #bd301d;
 }
 
 @media screen and (min-width: 1367px) {
-    .controls-container .emotion-radios {
-        gap: 45px;
-    }
+  .controls-container .emotion-radios {
+    gap: 45px;
+  }
 
-    .emotion-radios .radio {
-        width: 26rem;
-        height: 28rem;
-    }
+  .emotion-radios .radio {
+    width: 26rem;
+    height: 28rem;
+  }
 }
 
 @media screen and (max-width: 1360px) {
-    .controls-container .emotion-radios {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .controls-container .emotion-radios {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .controls-container .emotion-radios {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .controls-container .emotion-radios {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (max-width: 800px) {
+  .header {
+    width: 100vw;
+    height: 8vh;
+  }
 
-    .header {
-        width: 100vw;
-        height: 8vh;
-    }
+  label {
+    font-size: 1rem;
+  }
 
-    label {
-        font-size: 1rem;
-    }
+  .controls-container {
+    padding: 1em;
+    width: 80vw;
+    margin: auto;
+  }
 
-    .controls-container {
-        padding: 1em;
-        width: 80vw;
-        margin: auto;
-    }
+  .logo-text {
+    font-size: 1rem;
+    text-align: center;
+  }
 
-    .song-modal {
-        top: 5rem;
-    }
-
-    .song-modal-close-btn {
-        top: 10rem;
-    }
-
-    .logo-text {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .play-song-btn {
-        font-size: 1rem;
-        margin-top: 14px;
-    }
+  .play-song-btn {
+    font-size: 1rem;
+    margin-top: 14px;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+  }
 
-    .menu {
-        flex-direction: column;
-    }
+  header .right-side {
+    width: 5rem;
+  }
 
-    header .right-side {
-        width: 5rem;
-    }
+  .left-side .logo-text {
+    font-size: 1.1rem;
+  }
 
-    .left-side .logo-text{
-        font-size: 1.1rem;
-    }
+  .controls-container {
+    width: 100%;
+  }
 
-    .song-modal {
-        position: fixed;
-        top: 2rem;
-    }
-    .mood-song {
-        width: 80vw;
-    }
+  .controls-container .emotion-radios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
+  }
 
-    .song-modal-close-btn {
-        top: 10rem;
-    }
-
-    .controls-container {
-        width: 100%;
-    }
-
-    .controls-container .emotion-radios {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        gap: 30px;
-    }
-
-    .emotion-radios .radio {
-        border-radius: 25px;
-    }
+  .emotion-radios .radio {
+    border-radius: 25px;
+  }
 }
 
-@media screen and (max-height: 800px) and (min-height: 799px), screen and (max-height: 600px) and (min-height: 599px) {
-    .controls-container .emotion-radios {
-        margin: 40px 0px;
-    }
+@media screen and (max-height: 800px) and (min-height: 799px),
+  screen and (max-height: 600px) and (min-height: 599px) {
+  .controls-container .emotion-radios {
+    margin: 40px 0px;
+  }
 }
