@@ -8,28 +8,18 @@ const toggleBtn = document.getElementById("toggle")
 
 toggleBtn.addEventListener('click', () => {
     const menu = document.querySelector(".menu");
-    const header = document.querySelector(".header");
-    const radios = document.querySelectorAll(".radio");
     const closeBtnSVG = document.getElementById("close-btn-svg");
-    const moon = document.getElementById("moon");
-    const sun = document.getElementById("sun");
 
     // Check the current background color and toggle between two states
     if (menu.style.backgroundColor === "whitesmoke") {
         // Reset to original colors => set to dark mode colors
         menu.style.backgroundColor = "#242424";
-        header.style.backgroundColor = "";
-        radios.forEach(radio => radio.style.color = "");  // Reset each .radio element's color
-        moon.style.display = "none";
-        sun.style.display = "block";
+        toggleBtn.style.backgroundColor = "#0d6efd";
         closeBtnSVG.style.fill = "";
     } else {
         // Set to light mode colors
-        moon.style.display = "block";
-        sun.style.display = "none";
+        toggleBtn.style.backgroundColor = "";
         menu.style.backgroundColor = "whitesmoke";
-        header.style.backgroundColor = "#171717";
-        radios.forEach(radio => radio.style.color = "black");  // Apply color to each .radio element
         closeBtnSVG.style.fill = "black";
     }
 });
@@ -55,7 +45,7 @@ function closeModal() {
 }
 
 // Make playSong a global function by attaching it to window
-window.playSong = function(emotion) {
+window.playSong = function (emotion) {
     const songsArray = musicData.filter(song => song.genre.includes(emotion));
     const songObject = songsArray.length === 1 ? songsArray[0] : songsArray[Math.floor(Math.random() * songsArray.length)];
 
@@ -80,11 +70,11 @@ function getEmotionsArray(songs) {
 function renderEmotionsRadios(songs) {
     let radioItems = ``;
     const emotions = getEmotionsArray(songs);
-    
+
     for (let emotion of emotions) {
         const matchingSong = songs.find(song => song.genre.includes(emotion));
         const imageUrl = matchingSong.img || 'default-image.jpg';
-        
+
         radioItems += `
         <div class="radio" id="${emotion}-radio">
             <section class="album-img">
@@ -98,7 +88,11 @@ function renderEmotionsRadios(songs) {
             value="${emotion}"
             name="emotions"
             >
-            <button class="play-song-btn" onclick="playSong('${emotion}')">▶</button>
+            <button class="play-song-btn" onclick="playSong('${emotion}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+            </button>
             </div>
         </div>`;
     }

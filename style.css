@@ -69,10 +69,6 @@ header .left-side {
     background-color: #242424;
 }
 
-#sun {
-    display: none;
-}
-
 /* #toggle svg:hover, #toggle svg:focus {
     fill: #fff;
 } */
@@ -177,7 +173,8 @@ input[type="radio"] {
 }
 
 .play-song-btn {
-    background-color: #f15208;
+    background-color: #0d6efd;
+    padding: 8px;
     width: 3rem;
     height: 3rem;
     color: #f5e8e6;
@@ -189,7 +186,8 @@ input[type="radio"] {
 }
 
 .play-song-btn:hover,.play-song-btn:focus{
-    box-shadow: 0px 0px 18px #fd631c;
+    /* box-shadow: 0px 0px 18px #fd631c; */
+    box-shadow: 0px 0px 18px #0d6efd;
 }
 
 /* modal */
