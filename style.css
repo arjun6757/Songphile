@@ -9,7 +9,6 @@
 
 
 body {
-    background-color: #242424;
     /* width: 100vw; */
     overflow-x: hidden; /* Ensure no horizontal scrolling */
 }
@@ -42,7 +41,6 @@ header .left-side {
 .left-side .logo-text {
     color: #fff;
     font-size: 1.3rem;
-    text-shadow: 1px 1px #fd631c;
     font-family: "Noto Sans", sans-serif;
 }
 
@@ -55,8 +53,11 @@ header .left-side {
 }
 
 #toggle {
-    background-color: transparent;
-    padding: 15px;
+    background-color: #333;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    /* border: 1px solid #777; */
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -64,13 +65,40 @@ header .left-side {
     font-size: 1.5rem;
 }
 
-#toggle:hover,
-#toggle:focus {
-    text-shadow: 4px 3px 10px #fd631c;
+#toggle:hover {
+    background-color: #242424;
 }
+
+#sun {
+    display: none;
+}
+
+/* #toggle svg:hover, #toggle svg:focus {
+    fill: #fff;
+} */
+
+/* #moon {
+    color: #fff;
+    display: none;
+    fill:none;
+}
+
+#sun {
+    color: #fff;
+    fill:none;
+}
+
+#sun:hover {
+    fill: white;
+}
+
+#moon:hover {
+    fill: white;
+} */
 
 .menu {
     min-height: calc(100vh - 6rem);
+    /* background-color: whitesmoke; */
     display: flex;
     justify-content: center;
     align-items: center;

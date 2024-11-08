@@ -11,23 +11,25 @@ toggleBtn.addEventListener('click', () => {
     const header = document.querySelector(".header");
     const radios = document.querySelectorAll(".radio");
     const closeBtnSVG = document.getElementById("close-btn-svg");
+    const moon = document.getElementById("moon");
+    const sun = document.getElementById("sun");
 
     // Check the current background color and toggle between two states
-    if (menu.style.backgroundColor === "rgb(255, 249, 238)") {
-        // Reset to original colors
-        menu.style.backgroundColor = "";
-        document.querySelector(".logo-text").style.color = "";
+    if (menu.style.backgroundColor === "whitesmoke") {
+        // Reset to original colors => set to dark mode colors
+        menu.style.backgroundColor = "#242424";
         header.style.backgroundColor = "";
         radios.forEach(radio => radio.style.color = "");  // Reset each .radio element's color
-        toggleBtn.innerText = "🌙";  // Dark mode icon
+        moon.style.display = "none";
+        sun.style.display = "block";
         closeBtnSVG.style.fill = "";
     } else {
         // Set to light mode colors
-        menu.style.backgroundColor = "rgb(255, 249, 238)";
-        document.querySelector(".logo-text").style.color = "black";
-        header.style.backgroundColor = "rgb(246, 229, 215)";
+        moon.style.display = "block";
+        sun.style.display = "none";
+        menu.style.backgroundColor = "whitesmoke";
+        header.style.backgroundColor = "#171717";
         radios.forEach(radio => radio.style.color = "black");  // Apply color to each .radio element
-        toggleBtn.innerText = "☀️";  // Light mode icon
         closeBtnSVG.style.fill = "black";
     }
 });
@@ -58,7 +60,7 @@ window.playSong = function(emotion) {
     const songObject = songsArray.length === 1 ? songsArray[0] : songsArray[Math.floor(Math.random() * songsArray.length)];
 
     songModalInner.innerHTML = `
-        <iframe draggable="true" class="mood-song" src="${songObject.url}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <iframe draggable="true" class="mood-song" src="${songObject.url}" allow="autoplay; encrypted-media" width="100%" height="100%" loading="lazy" frameborder="0" ></iframe>
     `;
     songModal.style.display = 'flex';
 };
