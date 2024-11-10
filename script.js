@@ -8,7 +8,7 @@ const toggleBtn = document.getElementById("toggle")
 const embeddedPlayer = document.getElementById("embedded-player");
 
 embeddedPlayer.addEventListener('click', () => {
-    if(songModal.style.display === 'flex'){
+    if (songModal.style.display === 'flex') {
         closeModal();
     }
     else {
