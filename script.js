@@ -5,6 +5,16 @@ const songModalInner = document.getElementById('song-modal-inner');
 const songModal = document.getElementById('song-modal');
 const songModalCloseBtn = document.getElementById('song-modal-close-btn');
 const toggleBtn = document.getElementById("toggle")
+const embeddedPlayer = document.getElementById("embedded-player");
+
+embeddedPlayer.addEventListener('click', () => {
+    if(songModal.style.display === 'flex'){
+        closeModal();
+    }
+    else {
+        openModal();
+    }
+})
 
 toggleBtn.addEventListener('click', () => {
     const menu = document.querySelector(".menu");
@@ -32,6 +42,7 @@ toggleBtn.addEventListener('click', () => {
 emotionRadios.addEventListener('change', highlightCheckedOption);
 songModalCloseBtn.addEventListener('click', closeModal);
 
+
 function highlightCheckedOption(e) {
     const radios = document.getElementsByClassName('radio');
     for (let radio of radios) {
@@ -42,6 +53,12 @@ function highlightCheckedOption(e) {
 
 function closeModal() {
     songModal.style.display = 'none';
+    embeddedPlayer.style.backgroundColor = "";
+}
+
+function openModal() {
+    songModal.style.display = 'flex';
+    embeddedPlayer.style.backgroundColor = "#0d6efd";
 }
 
 // Make playSong a global function by attaching it to window
@@ -52,7 +69,7 @@ window.playSong = function (emotion) {
     songModalInner.innerHTML = `
         <iframe draggable="true" class="mood-song" src="${songObject.url}" allow="autoplay; encrypted-media" width="100%" height="100%" loading="lazy" ></iframe>
     `;
-    songModal.style.display = 'flex';
+    openModal();
 };
 
 function getEmotionsArray(songs) {
