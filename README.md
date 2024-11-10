@@ -1,5 +1,5 @@
 # Summary
-This project is a fork of this [repo](https://github.com/amelia2802/Songphile).
+This project is a fork of this [repo](https://github.com/amelia2802/Songphile)
 
 ## Tools/Technology:
 - HTML

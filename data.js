@@ -22,8 +22,7 @@ export const musicData = [
     {
         genre: ["sad"],
         img: "https://i.pinimg.com/enabled_lo/564x/04/10/8e/04108e317b058e4114f41f15589a568b.jpg",
-        url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256689809&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
-
+        url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1904524403%3Fsecret_token%3Ds-GluEYENiR3F&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false",
     },
 
     {
